@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seu Site</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Estilo geral para o body */
+        body {
+            background-color: #112941;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Estilo para o conteúdo principal */
+        .main-content {
+            padding: 40px 20px; /* Espaçamento interno */
+            max-width: 1200px; /* Largura máxima do conteúdo */
+            margin: 0 auto; /* Centralizar na página */
+        }
+
+        /* Estilo para as seções de informações e parceiros */
+        .info-section, .partner-section {
+            background-color: #1a3549;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* Estilo para o título das seções */
+        .section-title {
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        /* Estilo para listas de informações */
+        .info-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .info-list li {
+            margin-bottom: 10px;
+        }
+
+        /* Estilo para logos dos parceiros */
+        .partner-logos {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .partner-logo {
+            max-width: 100px;
+            margin: 10px;
+            transition: transform 0.3s ease-in-out;
+            display: inline-block;
+        }
+
+        /* Efeito de hover para os logos */
+        .partner-logo:hover {
+            transform: scale(1.1);
+        }
+
+        /* Estilo para o ícone do WhatsApp */
+        .whatsapp-icon {
+            cursor: pointer;
+            width: 50px;
+            height: 50px;
+            z-index: 1000;
+            animation: pulseRotate 2s infinite;
+            margin-right: 10px; /* Ajuste conforme necessário */
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+        }
+
+        /* Animação pulsante para o ícone do WhatsApp */
+        @keyframes pulseRotate {
+            0% {
+                transform: scale(1) rotate(0deg);
+            }
+            50% {
+                transform: scale(1.2) rotate(15deg);
+            }
+            100% {
+                transform: scale(1) rotate(0deg);
+            }
+        }
+
+        /* Estilo para o fundo do modal */
+        .modal-backdrop {
+            background-color: rgba(0, 0, 0, 0.5); /* Cor do fundo semi-transparente */
+        }
+
+        /* Estilo para a seção "Fale com o técnico" */
+        .technician-contact {
+            background-color: #1a3549;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .technician-contact img {
+            max-width: 100px;
+            margin-bottom: 10px;
+        }
+
+        .technician-contact p {
+            color: #fff;
+            margin: 0;
+        }
+
+        /* Estilo para o modal */
+        .modal-content {
+            background-color: #1a3549;
+            color: #fff;
+        }
+
+        /* Estilo para o fundo do modal */
+        .modal-backdrop {
+            background-color: rgba(0, 0, 0, 0.5); /* Cor do fundo semi-transparente */
+        }
+
+        /* Estilo para o rodapé */
+        footer {
+            background-color: #343a40; /* Cor de fundo escura */
+            color: #fff; /* Cor do texto */
+            padding: 20px 0; /* Espaçamento interno */ 
+            margin-top: 190px;
+        }
+
+        .footer-logo {
+            max-width: 80px; /* Largura máxima do logotipo */
+            margin-bottom: 10px; /* Espaçamento inferior */
+        }
+
+        .footer-text {
+            text-align: left; /* Alinhamento do texto à esquerda */
+        }
+
+        .footer-text p {
+            margin-bottom: 5px; /* Espaçamento inferior entre os parágrafos */
+        }
+
+        .footer-contact-info {
+            font-size: 12px;
+        }
+
+        .footer-contact-info p {
+            margin-bottom: 5px; /* Espaçamento inferior entre os parágrafos */ 
+            margin-top: 10px; 
+        } 
+        .eu{
+            max-width: 100px; /* Largura máxima da foto */
+            border-radius: 50%; /* Arredondamento da borda para formar um círculo */
+        } 
+        .col-md-9 {
+            margin-bottom: 20px;
+        }  
+        .carousel {
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .carousel-inner {
+            width: 100%;
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-item {
+           
+    width: 100%; /* Ajuste para ocupar 100% da largura */
+}
+        
+
+        /* Estilo para as setas de navegação */
+        .carousel-control {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+            width: 5%;
+            font-size: 20px;
+            color: #fff;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s ease;
+        }
+
+        .carousel-control:hover {
+            background-color: rgba(0, 0, 0, 0.5);
+            text-decoration: none;
+        }
+
+        .carousel-control-prev {
+            left: 0;
+        }
+
+        .carousel-control-next {
+            right: 0;
+        }
+
+        /* Estilo para as bolinhas indicadoras */
+        .carousel-indicators {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .carousel-indicator {
+            width: 12px;
+            height: 12px;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            margin: 0 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .carousel-indicator.active {
+            background-color: #fff;
+        } 
+        .position-relative {
+        position: relative;
+    }
+    .position-absolute {
+        position: absolute;
+    } 
+    .custom-btn-position { 
+        background-color: #1a3549;
+        top: 50%; /* Centraliza verticalmente */
+        left: 300px; /* Ajuste para mover horizontalmente */
+        transform: translateY(-50%);
+        color: #f3f4f5;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        animation: pulse 1.5s infinite alternate; /* Animação de pulso */
+    } 
+    @keyframes pulse {
+        0% {
+            opacity: 0.5;
+        }
+        100% {
+            opacity: 1;
+        }
+    } 
+    .img-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0.8;
+        }
+        .img-overlay img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px; /* Borda arredondada opcional */
+        }
+        .icon-left {
+            position: absolute;
+            top: 50%;
+            left: 110px; /* Ajuste para a posição esquerda */
+            transform: translateY(-50%);
+            font-size: 24px; /* Tamanho do ícone */
+            color: #fff; /* Cor do ícone */
+            cursor: pointer;
+        }
+        .img-overlay-sonoda {
+            position: absolute;
+            top: 100px; /* Ajuste para a posição superior */
+            left: 350px; /* Ajuste para a posição esquerda */
+            z-index: 10; /* Para garantir que fique sobreposta à imagem */
+            animation: blink 1s infinite; /* Animação de piscar */
+        }
+        @keyframes blink {
+            0% { opacity: 0; }
+            50% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+        .img-overlay-sonoda img {
+            width: 100px; /* Ajuste o tamanho conforme necessário */
+            height: auto;
+        } 
+        .vantagens-container {
+            position: absolute;
+            top: 45%;
+            left: 600px;
+            transform: translateY(-50%);
+            max-width: 60%;
+            padding: 20px;
+            background-color: rgba(26, 53, 73, 0.05); /* Reduzindo a opacidade para 5% */
+            border-radius: 10px;
+            text-align: left;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            z-index: 2;
+        } 
+        .vantagens {
+            padding: 10px 0; /* Ajuste o valor do padding conforme desejado */ 
+            margin-bottom: 5px; /* Ajuste o valor conforme necessário */
+} 
+        .vantagens h6 {
+        font-size: 12px; 
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+    </style>
+</head>
+<body> 
+    <div class="carousel" id="headerCarousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active position-relative">
+                <img src="Screenshot_4.png" alt="Imagem 1" width="100%" height="auto">
+                <a href="#" id="btnOrcamento" class="btn btn-primary position-absolute custom-btn-position">Faça um Orçamento</a>
+            </div>
+            <div class="carousel-item">
+                <img src="Screenshot_5.png" height="343" alt="Imagem 2">
+            </div>
+            <div class="carousel-item position-relative">
+                <!-- Ícone à esquerda da imagem -->
+                <i class="fas fa-arrow-left icon-left"></i>
+                <img src="Screenshot_6.png" height="343" alt="Imagem 3">
+                
+                <!-- Imagem Sonoda Ponto.ico sobreposta -->
+                <div class="img-overlay-sonoda"> 
+                    <a href="https://sonodaponto.com.br/ponto-web-secullum/?utm_source=google&utm_campaign=17424627277&utm_term=aplicativo%20de%20ponto&gad_source=1&gclid=Cj0KCQjwj9-zBhDyARIsAERjds0BEgVeQRXD_YX9ZN_oJ_BC1zegHBBTI8bztLZoIQDuLsmSMmcAeXUaAulzEALw_wcB" target="_blank">
+                        <img src="Sonoda Ponto.ico" alt="">  
+                    </a>
+                </div>   
+                <div class="vantagens-container">
+                    <div class="vantagens">
+                        <center><h5>Vantagens Sonoda Ponto</h5><br><br></center>
+                        <h6><strong>Ajuda no fechamento ✔️</strong>  </h6> 
+                        <h6><strong>Suporte Diariamente✔️</strong> </h6>
+                        <h6><strong>Treinamento✔️</strong> </h6>
+                        <h6><strong>Acompanhamento a empresa✔️</strong> </h6> 
+                        <h6><strong>Facil usabilidade✔️</strong> </h6>
+                    </div>
+                </div>
+                
+                <!-- Vantagens ao lado da logo -->
+                
+            </div>
+        <a class="carousel-control-prev" href="#headerCarousel" role="button" data-slide="prev">
+            &#8249;
+        </a>
+        <a class="carousel-control-next" href="#headerCarousel" role="button" data-slide="next">
+            &#8250;
+        </a>
+        <ul class="carousel-indicators">
+            <li class="carousel-indicator active" data-slide-to="0"></li>
+            <li class="carousel-indicator" data-slide-to="1"></li>
+            <li class="carousel-indicator" data-slide-to="2"></li>
+        </ul>
+    </div> 
+    
+    
+    
+
+<div class="container main-content">
+    <div class="row">
+        <div class="col-md-6">
+            <!-- Seção de Informações -->
+            <div class="info-section">
+                <h2 class="section-title">Informações</h2>
+                <ul class="info-list">
+                    <li>Sistema dentro da Legislação do trabalho ✔️</li>
+                    <li>LGPD ✔️</li>
+                    <li>100% seguro e flexível ✔️</li>
+                    <li>Experiência no Mercado ✔️</li>
+                    <li>Suporte Técnico ✔️</li>
+                    <li>Ampla base de clientes satisfeitos ✔️</li>
+                    <li>Integração com sistemas de RH ✔️</li>
+                    <li>Personalização de acordo com as necessidades da empresa ✔️</li>
+                    <li>Atualizações regulares e melhorias contínuas ✔️</li>
+                    <li>Consultoria especializada ✔️</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <!-- Seção de Parceiros -->
+            <div class="partner-section">
+                <h2 class="section-title">Nossas Parcerias</h2>
+                <div class="partner-logos">
+                    <img src="GDBR.png" alt="gdbr" class="partner-logo">
+                    <img src="endeavor.png" alt="Endeavor" class="partner-logo">
+                    <img src="logcomex.png" alt="Logcomex" class="partner-logo">
+                    <img src="simple_organic.png" alt="Simple Organic" class="partner-logo">
+                    <img src="desincha.png" alt="Desincha" class="partner-logo">
+                </div>
+            </div>
+
+            <!-- Seção de Contato -->
+            <div class="info-section">
+                <h2 class="section-title">Fale com o técnico</h2>
+                <div class="row">
+                    <div class="col-md-3">
+                        <img class="eu" class src="Suporte Interno.png" alt="Suporte Interno" class="eu">
+                    </div>
+                    <div class="col-md-9">
+                        <p id="contact-info">
+                            <!-- Ícone para copiar e-mail -->
+                            <span class="copy-icon" onclick="copyText('email')">
+                                <img src="icone.png" alt="Copiar e-mail" style="width: 20px; height: 20px; margin-right: 5px;">
+                            </span>
+                            <strong id="email">seuemail@example.com</strong><br>
+
+                            <!-- Ícone para copiar telefone 1 -->
+                            <span class="copy-icon" onclick="copyText('phone1')">
+                                <img src="icone.png" alt="Copiar telefone" style="width: 20px; height: 20px; margin-right: 5px;">
+                            </span>
+                            <strong id="phone1">(XX) XXXX-XXXX</strong><br>
+
+                            <!-- Ícone para copiar telefone 2 -->
+                            <span class="copy-icon" onclick="copyText('phone2')">
+                                <img src="icone.png" alt="Copiar telefone" style="width: 20px; height: 20px; margin-right: 5px;">
+                            </span>
+                            <strong id="phone2">(YY) YYYY-YYYY</strong><br>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal de Contato via WhatsApp -->
+<div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Entre em contato via WhatsApp</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p></p>
+            </div>
+            <div class="modal-footer">
+                <a id="whatsapp-link" class="btn btn-success" href="#" onclick="openWhatsApp()">Abrir WhatsApp</a>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-dark text-white text-center py-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="footer-logo">
+                    <img src="Sonoda Ponto.ico" alt="Logo Sonoda" class="footer-logo">
+                </div>
+                <div class="footer-text">
+                    <p><strong>Sonoda Gestão do Ponto e Acesso</strong></p>
+                    <p>CNPJ: 20.009.771/0001-57</p>
+                    <p>Rua Sete De Setembro, 430 - Boa Vista - Marília/SP - CEP 17.501-560</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="footer-contact-info">
+                    <br>
+                    <strong><h5 class="">Entre em contato</h5><br></strong>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="icons">
+                                <p style="display: flex; align-items: center;">
+                                    <img src="linkedin.png" width="20px" height="20px" alt="" style="margin-right: 5px;"> <!-- Espaço ajustado aqui -->
+                                    <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a> - Válido até: 21/07/2024
+                                </p>
+                                <p style="display: flex; align-items: center;">
+                                    <img src="whatsapp (1).png" width="20px" height="20px" alt="" style="margin-right: 5px;"> <!-- Espaço ajustado aqui -->
+                                    <a href="https://api.whatsapp.com/send?phone=1234567890" target="_blank">WhatsApp</a> - Válido até: 21/07/2024
+                                </p>
+                                <p style="display: flex; align-items: center;">
+                                    <img src="whatsapp (1).png" width="20px" height="20px" alt="" style="margin-right: 5px;"> <!-- Espaço ajustado aqui -->
+                                    <a href="https://api.whatsapp.com/send?phone=15998206224" target="_blank">WhatsApp</a> - Válido até: 21/07/2024
+                                </p>
+                                <p style="display: flex; align-items: center;">
+                                    <img src="whatsapp (1).png" width="20px" height="20px" alt="" style="margin-right: 5px;"> <!-- Espaço ajustado aqui -->
+                                    <a href="https://api.whatsapp.com/send?phone=15997454174" target="_blank">WhatsApp</a> - Válido até: 21/07/2024
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="icons">
+                                <p style="display: flex; align-items: center;">
+                                    <img src="instagram.png" width="20px" height="20px" alt="" style="margin-right: 5px;"> <!-- Espaço ajustado aqui -->
+                                    <a href="https://www.instagram.com/" target="_blank">Instagram</a> - Válido até: 21/07/2024
+                                </p>
+                                <p style="display: flex; align-items: center;">
+                                    <img src="Sonoda Ponto.ico" width="20px" height="20px" alt="" style="margin-right: 5px;"> <!-- Espaço ajustado aqui -->
+                                    <a href="https://www.example.com/" target="_blank">Exemplo</a> - Válido até: 21/07/2024
+                                </p>
+                                <p style="display: flex; align-items: center;">
+                                    <img src="correspondencia.png" width="20px" height="20px" alt="" style="margin-right: 5px;"> <!-- Espaço ajustado aqui -->
+                                    <a href="https://www.example.com/" target="_blank">Correspondência</a> - Válido até: 21/07/2024
+                                </p> 
+                                <p style="display: flex; align-items: center;">
+                                    <img src="correspondencia.png" width="20px" height="20px" alt="" style="margin-right: 5px;"> <!-- Espaço ajustado aqui -->
+                                    <a href="https://www.example.com/" target="_blank">Correspondência</a> - Válido até: 21/07/2024
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+            
+</footer><br>
+
+<!-- WhatsApp Icon -->
+<div class="whatsapp-icon" data-toggle="modal" data-target="#contactModal">
+    <img src="WHATS.ico" height="60px" width="60" alt="whatsapp">
+</div>
+
+<!-- Scripts JavaScript -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+    function openWhatsApp() {
+        let phoneNumber = "+5515997454174"; // Substitua pelo número desejado
+        window.open(`https://wa.me/${phoneNumber}`, '_blank');
+    }
+
+    function copyText(type) {
+        let textToCopy = '';
+        let elementId = '';
+        let messageType = '';
+
+        if (type === 'email') {
+            textToCopy = document.getElementById('email').innerText.trim();
+            elementId = 'email';
+            messageType = ' E-mail Copiado 📧';
+        } else if (type === 'phone1') {
+            textToCopy = document.getElementById('phone1').innerText.trim();
+            elementId = 'phone1';
+            messageType = ' Telefone copiado 📞';
+        } else if (type === 'phone2') {
+            textToCopy = document.getElementById('phone2').innerText.trim();
+            elementId = 'phone2';
+            messageType = ' Telefone copiado 📞';
+        }
+
+        showCopiedMessage(elementId, messageType);
+
+        let textarea = document.createElement('textarea');
+        textarea.value = textToCopy;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+    }
+
+    function showCopiedMessage(elementId, messageType) {
+        removePreviousCopiedMessage();
+        let messageElement = document.createElement('span');
+        messageElement.className = 'copied-message';
+        messageElement.textContent = messageType;
+        document.getElementById(elementId).insertAdjacentElement('afterend', messageElement);
+        setTimeout(function() {
+            messageElement.remove();
+        }, 1500);
+    }
+
+    function removePreviousCopiedMessage() {
+        let previousMessage = document.querySelector('.copied-message');
+        if (previousMessage) {
+            previousMessage.remove();
+        }
+    } 
+    $('#headerCarousel').carousel({
+        interval: 5000 // Tempo em milissegundos (5 segundos)
+    }); 
+  
+   
+   
+    // Script para abrir o WhatsApp em nova aba/janela com a mensagem desejada
+    document.getElementById('btnOrcamento').addEventListener('click', function(event) {
+        event.preventDefault(); // Prevenir o comportamento padrão do link
+
+        var numeroTelefone = '5515997454174'; // Substitua com o seu número de telefone, sem espaços, traços ou caracteres especiais
+        var mensagem = encodeURIComponent('Estou interessado em obter um orçamento para o sistema de gestão de ponto 🕒💼 .'); // Mensagem pré-definida, codificada
+
+        // Montar o link do WhatsApp com a mensagem
+        var url = 'https://api.whatsapp.com/send?phone=' + numeroTelefone + '&text=' + mensagem;
+
+        // Abrir o link do WhatsApp em nova aba/janela
+        window.open(url, '_blank');
+    });
+</script>
+</script>
+</script>
+
+</body>
+</html>
