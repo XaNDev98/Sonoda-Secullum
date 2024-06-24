@@ -167,11 +167,16 @@
             overflow: hidden;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-
+        @media (max-width: 768px) {
+        .main-content {
+        padding: 20px; /* Reduz o padding para dispositivos menores */
+        max-width: 100%; /* Para ajustar à largura do dispositivo */
+                     }
+        }
+        
         .carousel-inner {
-            width: 100%;
             display: flex;
-            transition: transform 0.5s ease-in-out;
+            flex-wrap: nowrap; /* Garante que os itens do carrossel não quebrem a linha */
         }
 
         .carousel-item {
@@ -329,12 +334,12 @@
                 <a href="#" id="btnOrcamento" class="btn btn-primary position-absolute custom-btn-position">Faça um Orçamento</a>
             </div>
             <div class="carousel-item">
-                <img src="Screenshot_5.png" height="343" alt="Imagem 2">
+                <img src="Screenshot_5.png" alt="Imagem 2" width="100%" height="auto">
             </div>
             <div class="carousel-item position-relative">
                 <!-- Ícone à esquerda da imagem -->
                 <i class="fas fa-arrow-left icon-left"></i>
-                <img src="Screenshot_6.png" height="343" alt="Imagem 3">
+                <img src="Screenshot_6.png" alt="Imagem 3" width="100%" height="auto">
                 
                 <!-- Imagem Sonoda Ponto.ico sobreposta -->
                 <div class="img-overlay-sonoda"> 
