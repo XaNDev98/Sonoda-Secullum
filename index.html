@@ -338,12 +338,36 @@
     .info-section, .partner-section, .technician-contact {
         padding: 10px; /* Reduz o padding nas seções */
         margin-bottom: 10px; /* Reduz a margem inferior nas seções */
-    }
+    } 
 
     .footer-contact-info p {
         font-size: 10px; /* Reduz o tamanho da fonte nas informações de contato */
+    } 
+    
+}   
+.partner-section {
+    /* Estilo básico da seção de parceiros */
+    background-color: #4943c9;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+    /* Animação de pulso */
+    animation: pulse 2s infinite;
+}
+
+/* Definição da animação de pulso */
+@keyframes pulse {
+    10% {
+        transform: scale(1);
     }
-}  
+    5% {
+        transform: scale(1.1);
+    }
+    80% {
+        transform: scale(1);
+    }
+}
+
  
 
 /* Estilos adicionais para quando o botão estiver em telas menores, como dispositivos móveis */
@@ -354,30 +378,52 @@
         bottom: 10px; /* Posição inferior menor em telas menores */ 
         left: 15px; 
         width: 125px;
+    } 
+    .img-overlay-sonoda {
+        padding: 5px 10px; 
+        left: 55px;  
+        top: 20%; 
+        width: 60px;
     }
-} 
-@media (max-width: 768px) {
-    #btnOrcamento {
-        font-size: 10px; /* Reduz o tamanho da fonte em telas menores */
-        padding: 8px 16px; /* Ajusta o espaçamento interno */
-        bottom: 10px; /* Posição inferior menor em telas menores */ 
-        left: 15px; 
-        width: 125px;
+    .sonoda {
+        max-width: 80%; /* Ajuste o tamanho máximo para telas menores */ 
+        
+    } 
+    @media (max-width: 768px) {
+    .vantagens-container {
+        left: 45%; /* Centraliza horizontalmente */
+        top: -30%; /* Remove valor fixo */
+        transform: translate(-50%, 0); /* Centraliza horizontalmente */
+        text-align: center; /* Centraliza o texto */
     }
-} 
-@media (min-width: 768px) and (max-width: 1280px) {
-    #btnOrcamento {
-        font-size: 25px; /* Reduz o tamanho da fonte em telas menores */
-        padding: 10px 20px; /* Ajusta o espaçamento interno */
-        left: 150px; 
+
+    .vantagens h5 {
+        font-size: 6px; /* Ajuste conforme necessário */
+    } 
+    .vantagens h6 {
+        font-size: 22px; /* Ajuste conforme necessário */ 
+        top: -30%
     }
+}
 } 
+  
+    
 @media (max-width: 375px) {
     #btnOrcamento {
         font-size: 8px; /* Reduz o tamanho da fonte em telas menores */
         padding: 6px 2px; /* Ajusta o espaçamento interno */
         left: 15px; 
-        width: 125px;
+        width: 125px; 
+    } 
+    .img-overlay-sonoda {
+        padding: 5px 10px; 
+        left: 45px;  
+        top: 20%; 
+        width: 56px;
+    }
+    .sonoda {
+        max-width: 80%; /* Ajuste o tamanho máximo para telas menores */ 
+        
     }
 }  
 @media (min-width: 390px) and (max-width: 844px) {
@@ -389,12 +435,90 @@
 }  
 @media (min-width: 768px) and (max-width: 1024px) {
     #btnOrcamento {
-        font-size: 16px; /* Reduz o tamanho da fonte em telas menores */
+        font-size: 10px; /* Reduz o tamanho da fonte em telas menores */
         left: 100px;  
         padding: 8px 20px; 
-        width: 170px;
+        width: 150px;
+    }  
+    .img-overlay-sonoda {
+        padding: 5px 10px; 
+        left: 80px;  
+        top: 20%; 
+        width: 100px;
+    }
+    .sonoda {
+        max-width: 80%; /* Ajuste o tamanho máximo para telas menores */   
     } 
+}
+@media (min-width: 746px ) and (max-width: 809px) {
+    #btnOrcamento {
+        font-size: 22px; /* Reduz o tamanho da fonte em telas menores */
+        left: 70px;  
+        padding: 8px 20px; 
+        width: 250px;
+    }  
+    .img-overlay-sonoda {
+        padding: 5px 10px; 
+        left: 90px;  
+        top: 20%; 
+        width: 100px;
+    }
+    .sonoda {
+        max-width: 80%; /* Ajuste o tamanho máximo para telas menores */ 
+        
+    }
+} 
+@media (min-width: 808px ) and (max-width: 1315px) {
+    #btnOrcamento {
+        font-size: 22px; /* Reduz o tamanho da fonte em telas menores */
+        left: 200px;  
+        padding: 8px 20px; 
+        width: 250px;
+    }   
+    .img-overlay-sonoda {
+        padding: 5px 10px; 
+        left: 200px;  
+        top: 20%; 
+        width: 250px;
+    }
+    .sonoda {
+        max-width: 80%; /* Ajuste o tamanho máximo para telas menores */ 
+        
+    }
 }  
+
+@media (min-width: 809px ) and (max-width: 1781px) {
+    #btnOrcamento {
+        font-size: 28px; /* Reduz o tamanho da fonte em telas menores */
+        left: 200px;  
+        padding: 8px 20px; 
+        width: 400px;
+    }  
+    .img-overlay-sonoda {
+        padding: 5px 10px; 
+        left: 200px;  
+        top: 20%; 
+        width: 250px;
+    }
+    .sonoda {
+        max-width: 80%; /* Ajuste o tamanho máximo para telas menores */ 
+        
+    } 
+    @media (max-width: 768px) {
+    .vantagens-container {
+        left: 50%; /* Centraliza horizontalmente */
+        top: auto; /* Remove valor fixo */
+        transform: translate(-50%, 0); /* Centraliza horizontalmente */
+        text-align: center; /* Centraliza o texto */
+        font-size: 25px !important; /* Ajuste conforme necessário */
+    }
+
+    .vantagens h6 {
+        font-size: 25px !important; /* Ajuste conforme necessário */
+    }
+}
+} 
+  
 
     </style>
 </head>
@@ -416,7 +540,7 @@
                 <!-- Imagem Sonoda Ponto.ico sobreposta -->
                 <div class="img-overlay-sonoda"> 
                     <a href="https://sonodaponto.com.br/ponto-web-secullum/?utm_source=google&utm_campaign=17424627277&utm_term=aplicativo%20de%20ponto&gad_source=1&gclid=Cj0KCQjwj9-zBhDyARIsAERjds0BEgVeQRXD_YX9ZN_oJ_BC1zegHBBTI8bztLZoIQDuLsmSMmcAeXUaAulzEALw_wcB" target="_blank">
-                        <img src="Sonoda Ponto.ico" alt="">  
+                        <img class="sonoda" src="Sonoda Ponto.ico" alt="">  
                     </a>
                 </div>   
                 <div class="vantagens-container">
@@ -475,7 +599,7 @@
                 <h2 class="section-title">Nossas Parcerias</h2>
                 <div class="partner-logos">
                     <img src="GDBR.png" alt="gdbr" class="partner-logo">
-                    <img src="endeavor.png" alt="Endeavor" class="partner-logo">
+                    <img src="Soneda.png" alt="Soneda" class="partner-logo">
                     <img src="logcomex.png" alt="Logcomex" class="partner-logo">
                     <img src="simple_organic.png" alt="Simple Organic" class="partner-logo">
                     <img src="desincha.png" alt="Desincha" class="partner-logo">
@@ -495,19 +619,19 @@
                             <span class="copy-icon" onclick="copyText('email')">
                                 <img src="icone.png" alt="Copiar e-mail" style="width: 20px; height: 20px; margin-right: 5px;">
                             </span>
-                            <strong id="email">seuemail@example.com</strong><br>
+                            <strong id="email">Alexandre.mastrandea@sonodaponto.com.br</strong><br>
 
                             <!-- Ícone para copiar telefone 1 -->
                             <span class="copy-icon" onclick="copyText('phone1')">
                                 <img src="icone.png" alt="Copiar telefone" style="width: 20px; height: 20px; margin-right: 5px;">
                             </span>
-                            <strong id="phone1">(XX) XXXX-XXXX</strong><br>
+                            <strong id="phone1">(15) 9745-4174</strong><br>  
 
                             <!-- Ícone para copiar telefone 2 -->
                             <span class="copy-icon" onclick="copyText('phone2')">
                                 <img src="icone.png" alt="Copiar telefone" style="width: 20px; height: 20px; margin-right: 5px;">
                             </span>
-                            <strong id="phone2">(YY) YYYY-YYYY</strong><br>
+                            <strong id="phone2">(15) 99820-6224</strong><br>
                         </p>
                     </div>
                 </div>
@@ -560,19 +684,19 @@
                             <div class="icons">
                                 <p style="display: flex; align-items: center;">
                                     <img src="linkedin.png" width="20px" height="20px" alt="" style="margin-right: 5px;"> <!-- Espaço ajustado aqui -->
-                                    <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a> - Válido até: 21/07/2024
+                                    <a href="https://www.linkedin.com/in/alexandre-mastrandea-a00a9825a/" target="_blank">LinkedIn</a> 
                                 </p>
                                 <p style="display: flex; align-items: center;">
                                     <img src="whatsapp (1).png" width="20px" height="20px" alt="" style="margin-right: 5px;"> <!-- Espaço ajustado aqui -->
-                                    <a href="https://api.whatsapp.com/send?phone=1234567890" target="_blank">WhatsApp</a> - Válido até: 21/07/2024
+                                    <a href="https://api.whatsapp.com/send?phone=+1130402939" target="_blank">Suporte</a>
                                 </p>
                                 <p style="display: flex; align-items: center;">
                                     <img src="whatsapp (1).png" width="20px" height="20px" alt="" style="margin-right: 5px;"> <!-- Espaço ajustado aqui -->
-                                    <a href="https://api.whatsapp.com/send?phone=15998206224" target="_blank">WhatsApp</a> - Válido até: 21/07/2024
+                                    <a href="https://api.whatsapp.com/send?phone=15998206224" target="_blank">Suporte</a>
                                 </p>
                                 <p style="display: flex; align-items: center;">
-                                    <img src="whatsapp (1).png" width="20px" height="20px" alt="" style="margin-right: 5px;"> <!-- Espaço ajustado aqui -->
-                                    <a href="https://api.whatsapp.com/send?phone=15997454174" target="_blank">WhatsApp</a> - Válido até: 21/07/2024
+                                    <img src="instagram.png" width="20px" height="20px" alt="" style="margin-right: 5px;"> <!-- Espaço ajustado aqui -->
+                                    <a href="https://www.instagram.com/sonodaponto/" target="_blank">Sonoda Ponto</a> 
                                 </p>
                             </div>
                         </div>
@@ -580,19 +704,19 @@
                             <div class="icons">
                                 <p style="display: flex; align-items: center;">
                                     <img src="instagram.png" width="20px" height="20px" alt="" style="margin-right: 5px;"> <!-- Espaço ajustado aqui -->
-                                    <a href="https://www.instagram.com/" target="_blank">Instagram</a> - Válido até: 21/07/2024
+                                    <a href="https://www.instagram.com/ale_xandao199/" target="_blank">Suporte</a>
                                 </p>
                                 <p style="display: flex; align-items: center;">
                                     <img src="Sonoda Ponto.ico" width="20px" height="20px" alt="" style="margin-right: 5px;"> <!-- Espaço ajustado aqui -->
-                                    <a href="https://www.example.com/" target="_blank">Exemplo</a> - Válido até: 21/07/2024
+                                    <a href="https://sonodaponto.com.br/ponto-web-secullum/?utm_source=google&utm_campaign=17424627277&utm_term=aplicativo%20de%20ponto&gad_source=1&gclid=Cj0KCQjwj9-zBhDyARIsAERjds2sc5NK_rg8RlWjzs1SrE7hZ3jcLiRBs83HTPgVPI5tGmP9-bSr6OkaAo_aEALw_wcB" target="_blank">Sonoda Ponto</a> 
                                 </p>
                                 <p style="display: flex; align-items: center;">
                                     <img src="correspondencia.png" width="20px" height="20px" alt="" style="margin-right: 5px;"> <!-- Espaço ajustado aqui -->
-                                    <a href="https://www.example.com/" target="_blank">Correspondência</a> - Válido até: 21/07/2024
+                                    Alexandre.mastrandea@sonodaponto.com.br
                                 </p> 
                                 <p style="display: flex; align-items: center;">
                                     <img src="correspondencia.png" width="20px" height="20px" alt="" style="margin-right: 5px;"> <!-- Espaço ajustado aqui -->
-                                    <a href="https://www.example.com/" target="_blank">Correspondência</a> - Válido até: 21/07/2024
+                                    Tamara.raunaimer@sonodaponto.com.br
                                 </p>
                             </div>
                         </div>
