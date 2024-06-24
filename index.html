@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Seu Site</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         /* Estilo geral para o body */
         body {
@@ -167,12 +168,6 @@
             overflow: hidden;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        @media (max-width: 768px) {
-        .main-content {
-        padding: 20px; /* Reduz o padding para dispositivos menores */
-        max-width: 100%; /* Para ajustar à largura do dispositivo */
-                     }
-        }
         
         .carousel-inner {
             display: flex;
@@ -297,7 +292,8 @@
             0% { opacity: 0; }
             50% { opacity: 1; }
             100% { opacity: 0; }
-        }
+        } 
+        
         .img-overlay-sonoda img {
             width: 100px; /* Ajuste o tamanho conforme necessário */
             height: auto;
@@ -322,7 +318,83 @@
         .vantagens h6 {
         font-size: 12px; 
         font-family: Verdana, Geneva, Tahoma, sans-serif;
-        }
+        } 
+        @media (max-width: 768px) {
+    .main-content {
+        padding: 20px; /* Reduz o padding para dispositivos menores */
+        max-width: 100%; /* Para ajustar à largura do dispositivo */
+    }
+
+    .carousel-item {
+        width: 100%; /* Ajuste para ocupar 100% da largura */
+    }
+
+    .vantagens-container {
+        left: 50%; /* Centraliza horizontalmente */
+        transform: translateX(-50%);
+        max-width: 90%; /* Ajusta a largura máxima para melhor visualização */
+    }
+
+    .info-section, .partner-section, .technician-contact {
+        padding: 10px; /* Reduz o padding nas seções */
+        margin-bottom: 10px; /* Reduz a margem inferior nas seções */
+    }
+
+    .footer-contact-info p {
+        font-size: 10px; /* Reduz o tamanho da fonte nas informações de contato */
+    }
+}  
+ 
+
+/* Estilos adicionais para quando o botão estiver em telas menores, como dispositivos móveis */
+@media (max-width: 768px) {
+    #btnOrcamento {
+        font-size: 10px; /* Reduz o tamanho da fonte em telas menores */
+        padding: 8px 16px; /* Ajusta o espaçamento interno */
+        bottom: 10px; /* Posição inferior menor em telas menores */ 
+        left: 15px; 
+        width: 125px;
+    }
+} 
+@media (max-width: 768px) {
+    #btnOrcamento {
+        font-size: 10px; /* Reduz o tamanho da fonte em telas menores */
+        padding: 8px 16px; /* Ajusta o espaçamento interno */
+        bottom: 10px; /* Posição inferior menor em telas menores */ 
+        left: 15px; 
+        width: 125px;
+    }
+} 
+@media (min-width: 768px) and (max-width: 1280px) {
+    #btnOrcamento {
+        font-size: 25px; /* Reduz o tamanho da fonte em telas menores */
+        padding: 10px 20px; /* Ajusta o espaçamento interno */
+        left: 150px; 
+    }
+} 
+@media (max-width: 375px) {
+    #btnOrcamento {
+        font-size: 8px; /* Reduz o tamanho da fonte em telas menores */
+        padding: 6px 2px; /* Ajusta o espaçamento interno */
+        left: 15px; 
+        width: 125px;
+    }
+}  
+@media (min-width: 390px) and (max-width: 844px) {
+    #btnOrcamento {
+        font-size: 10px; /* Reduz o tamanho da fonte em telas menores */
+        left: 10px;  
+        padding: 6px 0px;
+    } 
+}  
+@media (min-width: 768px) and (max-width: 1024px) {
+    #btnOrcamento {
+        font-size: 16px; /* Reduz o tamanho da fonte em telas menores */
+        left: 100px;  
+        padding: 8px 20px; 
+        width: 170px;
+    } 
+}  
 
     </style>
 </head>
@@ -331,7 +403,7 @@
         <div class="carousel-inner">
             <div class="carousel-item active position-relative">
                 <img src="Screenshot_4.png" alt="Imagem 1" width="100%" height="auto">
-                <a href="#" id="btnOrcamento" class="btn btn-primary position-absolute custom-btn-position">Faça um Orçamento</a>
+                <a href="#" id="btnOrcamento" class="btn btn-primary position-absolute custom-btn-position"> Faça um Orçamento</a>
             </div>
             <div class="carousel-item">
                 <img src="Screenshot_5.png" alt="Imagem 2" width="100%" height="auto">
